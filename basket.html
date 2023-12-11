@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+   <link rel="stylesheet" href="home.css">
+   <link rel="stylesheet" href="footer.css">
+
+   <style>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .wishlist {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #wishlistItems {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #wishlistItems li {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px;
+            background-color: green;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+  background-color:  rgb(57, 130, 57);
+}
+    </style>
+
+   </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="home.php">
+              <img src="logo.jpg" alt="Adventura Logo" width="40" height="40">
+              
+              
+                    <a class="nav-link active" aria-current="page" href="home.php"><h4>Adventura.com&nbsp&nbsp</h4></a></a>
+                  
+              
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          
+                  <li class="nav-item">
+          
+                    <a class="nav-link active" aria-current="page" href="login.php">Login</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" >Guide</a>
+                    </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Plan</a>
+                  </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="contact.html" target="_blank">ContactUs</a>
+                  </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="about.html" >About Us</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+        </nav>
+            <div class="wishlist">
+                <ul id="wishlistItems">
+                    
+                </ul>
+                <button onclick="clearWishlist()">Clear Wishlist</button>
+            </div>
+        
+            <script>
+                // Retrieve wishlist items from localStorage
+                const wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+                const wishlist = document.getElementById('wishlistItems');
+        
+                // Display wishlist items
+                wishlistItems.forEach(name => {
+                    const listItem = document.createElement('li');
+                    listItem.appendChild(document.createTextNode(name));
+                    wishlist.appendChild(listItem);
+                });
+        
+                // Function to clear the wishlist
+                function clearWishlist() {
+                    // Remove items from localStorage
+                    localStorage.removeItem('wishlistItems');
+        
+                    // Clear the displayed list
+                    wishlist.innerHTML = "";
+                }
+            </script>
+        </body>
+    <footer class="footer">
+      <div class="container footer__container">
+              <div class="footer__1">
+                  <a href="home.html" class="footer__logo"><h4>Adventura</h4></a>
+                  <p>This is the version of our website addressed to speakers of English in India. </p>
+              </div>
+          
+          <div class="footer__2">
+              <h4>For Links</h4>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </div>
+    
+          <div class="footer__3">
+              <h4>Privacy</h4>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Refund Policy</a></li>
+          </div>
+    
+          <div class="footer__4">
+              <h4>Contact Us</h4>
+              <div>
+                  
+                  <p>teamadventura2023@gmail.com</p>
+              </div>
+          
+    
+          <ul class="footer__socials">
+    
+              <li>
+                  <a href="#"><i class="uil uil-facebook"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="uil uil-instagram"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="uil uil-twitter"></i></a>
+              </li>
+              <li>
+                  <a href="#"><i class="uil uil-linkedin"></i></a>
+              </li>
+          </ul>
+      </div>
+      
+      </div>
+      <div class="footer__copyright">
+          <small>Copyright &copy; <span style="color: rgb(99, 179, 99)">Adventura</span></small>
+      </div>
+    </footer>
+    
+</html>

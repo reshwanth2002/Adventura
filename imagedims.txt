@@ -1,0 +1,2 @@
+<h2 style="text-align: center;">A21126511040 <br>M RESHWANTH</h2>
+    <img src="img.jpeg"alt="photo" style="width:100px; height: 100px; position: absolute; right:0;top:0;">

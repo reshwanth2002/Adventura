@@ -1,0 +1,68 @@
+ a:link {
+  color: rgb(5, 121, 5);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+    .checked {
+         color: orange;
+      }
+      .row {
+         display: flex;
+         flex-wrap: wrap;
+         padding: 0 4px;
+        }
+
+/* Create two equal columns that sits next to each other */
+    .column {
+             flex: 50%;
+         padding: 0 4px;
+            }
+
+    .column img {
+            margin-top: 8px;
+             vertical-align: middle;
+                }
+         button {
+                min-width: 30%;
+                border-radius: 12px;
+                background-color: #0000; /* Green background */
+                border: 10px  dark black; /* Green border */
+                color: dark black; /* White text */
+                padding: 10px 24px; /* Some padding */
+                cursor: pointer; /* Pointer/hand icon */
+                float: left; /* Float the buttons side by side */
+                }
+                button:not(:last-child) {
+                   border-right: none; /* Prevent double borders */
+                    
+                }
+                button:hover {
+                    background-color:  rgb(60, 147, 60);
+                   }
+                .btn1{
+                    margin-left: 90px;
+                }
+                .btn2{
+                    margin-left: 100px;
+                }
+                .column {
+                     float: left;
+                     width: 33.33%;
+                     padding: 5px;
+                        }
+
+                /* Clear floats after image containers */
+                .row::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                    }
+                    #addReviewBtn{
+                        min-width: 10px;
+                    }
+                    #addReview{
+                        min-width: 30px;
+                       
+                        margin-left: 500px;
+                    }

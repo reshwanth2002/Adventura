@@ -1,0 +1,78 @@
+/* Style for the overall page */
+
+
+/* Style for the reviews */
+.review {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.review h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.review p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Style for the "Add Review" button */
+#addReviewBtn {
+    min-width: 30%;
+    border-radius: 12px;
+    background-color: #0000; /* Green background */
+    border: 10px  dark black; /* Green border */
+    color: dark black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+#addReviewBtn:hover {
+    background-color:  rgb(60, 147, 60);
+}
+
+/* Style for the review form */
+#reviewForm {
+    margin-top: 20px;
+}
+
+#reviewForm h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 1em;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid #ddd;
+    border-radius: 7px;
+}
+
+input[type="submit"] {
+    min-width: 30%;
+    border-radius: 12px;
+    background-color: #0000; /* Green background */
+    border: 10px  dark black; /* Green border */
+    color: dark black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+input[type="submit"]:hover {
+    background-color:  rgb(60, 147, 60);
+}

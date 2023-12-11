@@ -1,0 +1,59 @@
+         body {
+            margin: 20px;
+            padding: 10px;
+                        background-size: cover;
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900'); 
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        
+        }
+        button {
+            border: 10px  dark black;
+            background-color:#0000;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(57, 130, 57);
+        }
+        button[type="submit"] {
+            border: 10px  dark black;
+            color: black; 
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(57, 130, 57);
+        }

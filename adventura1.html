@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Wishlist and Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin-bottom: 10px;
+        }
+        #wishlist, #plans {
+            list-style: none;
+            padding: 0;
+        }
+        #plans li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PLAN YOUR TRIP</h1>
+    <title>My Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wishlist-container">
+        <ul id="wishlist-list">
+            <li>
+                <img src="C:\Users\bhavy\Downloads\araku2 (1).jpg" alt="Araku valley">
+                <a href="#">Araku valley</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\charminar1 (1).jpg" alt="Charminar">
+                <a href="#">Charminar</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\kullu valley1 (1).jpg" alt="Place Name">
+                <a href="#">Kullu valley</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Ooty1 (1).jpg" alt="Place Name">
+                <a href="#">Ooty</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Tajmahal1.jpg" alt="Place Name">
+                <a href="#">Tajmahal</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Munnar1.jpg" alt="Place Name">
+                <a href="#">Munnar</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Indiagate1 (1).jpg" alt="Place Name">
+                <a href="#">Indiagate</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Redfort1 (1).jpg" alt="Place Name">
+                <a href="#">Redfort</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\Hampi2 (1).jpg" alt="Place Name">
+                <a href="#">Hampi</a>
+                <br>
+                <br>
+            </li>
+            <li>
+                <img src="C:\Users\bhavy\Downloads\konark1.jpg" alt="Place Name">
+                <a href="#">Konark Sun Temple</a>
+                <br>
+                <br>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <!-- Add a place to the wishlist -->
+    <label for="placeInput">Add a place to the wishlist:</label>
+    <input type="text" id="placeInput" placeholder="Enter a place name">
+    <button onclick="addPlace()">Add to Wishlist</button>
+
+    <!-- Display Wishlist -->
+    <h2>Wishlist:</h2>
+    <ul id="wishlist"></ul>
+
+    <!-- Move to Plans -->
+    <button onclick="showPlans()">Next</button>
+
+    <!-- Plans Section -->
+    <div id="plansSection" style="display: none;">
+        <h2>Travel Plans:</h2>
+
+        <!-- Date and Time Input -->
+        <label for="dateTimeInput">Enter date and time:</label>
+        <input type="datetime-local" id="dateTimeInput">
+        <br>
+        <button onclick="addPlan()">Add to Plans</button>
+
+        <!-- Display Travel Plans -->
+        <h3>Your Travel Plans:</h3>
+        <ul id="plans"></ul>
+    </div>
+
+    <script>
+        // Wishlist and Plans arrays
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        let plans = [];
+
+        // Function to add a place to the wishlist
+        function addPlace() {
+            const placeInput = document.getElementById('placeInput');
+            const place = placeInput.value.trim();
+
+            if (place === '') {
+                alert('Please enter a place name.');
+                return;
+            }
+
+            if (!wishlist.includes(place)) {
+                wishlist.push(place);
+                saveWishlist();
+                displayWishlist();
+                placeInput.value = ''; // Clear the input field
+            } else {
+                alert(`${place} is already in the wishlist.`);
+            }
+        }
+
+        // Function to display the wishlist
+        function displayWishlist() {
+            const wishlistElement = document.getElementById('wishlist');
+            wishlistElement.innerHTML = '';
+
+            wishlist.forEach((place, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}. ${place}`;
+                wishlistElement.appendChild(listItem);
+            });
+        }
+
+        // Function to save wishlist to local storage
+        function saveWishlist() {
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        }
+
+        // Function to show the plans section
+        function showPlans() {
+            document.getElementById('plansSection').style.display = 'block';
+        }
+
+        // Function to add a plan to the plans list
+        function addPlan() {
+            const dateTimeInput = document.getElementById('dateTimeInput');
+            const dateTime = dateTimeInput.value.trim();
+
+            if (dateTime === '') {
+                alert('Please enter a valid date and time.');
+                return;
+            }
+
+            const place = wishlist.shift(); // Get the first place from the wishlist
+            const plan = { place, dateTime };
+            plans.push(plan);
+            saveWishlist();
+            displayWishlist();
+            displayPlans();
+            dateTimeInput.value = ''; // Clear the input field
+        }
+
+        // Function to display the travel plans
+        function displayPlans() {
+            const plansElement = document.getElementById('plans');
+            plansElement.innerHTML = '';
+
+            plans.forEach((plan, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}. ${plan.place} - ${plan.dateTime}`;
+                plansElement.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
